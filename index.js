@@ -11,9 +11,9 @@ const nextButton = document.querySelector('[data-js="button-next"]');
 const pagination = document.querySelector('[data-js="pagination"]');
 
 // States
-const maxPage = 1;
-const page = 1;
-const searchQuery = "";
+let maxPage = 1;
+let page = 1;
+let searchQuery = "";
 
 // we need to write async function to fetch.
 
@@ -22,9 +22,11 @@ async function fetchCharacter () {
   const data = await response.json();
   
   maxPage = data.info.pages;
-  cardcontainer.innerHTML = '';
+  pagination.textContent = `${page} / ${maxPage}`;
 
-  data.result.foreach(Character  => {
+  cardContainer.innerHTML = '';
+
+  data.result.foreach(character  => {
     const card = createCharacterCard ({
     image: character.image,
     name: character.name,
@@ -32,7 +34,7 @@ async function fetchCharacter () {
     type: character.type,
     episodcount: character.episodcount.occurrences
     });
-    cardcontainer.appendChild(card);
+    cardContainer.appendChild(card);
   });
 
   /* Great Job! But we want to see not only 20 characters, we want all of them! So 
@@ -49,8 +51,45 @@ the fetchCharacters function is called
 Update the pagination display each time characters are fetched to show the 
 current page index and the current max page index.*/
 
-pagination.textContent = `${page} / ${maxPage}`;
-
 }
+
+fetchCharacter();
+
+// Adding event listner for the buttons.
+
+prevButton.addEventListener('click', () => {
+ if(page > 1) {
+  page--;
+  fetchCharacter(); 
+}
+});
+
+nextButton.addEventListener('click', () => {
+ if (page < maxPage) {
+  page++;
+  fetchCharacter();
+ }
+});
+
+/*The Search Bar
+Now we want even more functionality in our app. We want to find individual 
+characters by typing their name into the search bar.
+
+Create a 'submit' event listener on the search bar.
+Update the state variable searchQuery with the current text inside the search bar 
+every time this event is triggered.
+Modify the fetch URL again by adding another url encoded attribute name: append 
+&name=<searchQuery> to the url. If the search query is an empty string, it will be
+ ignored by the API, so don't worry about that.
+Now trigger the function fetchCharacters whenever a submit event happens.
+💡 You might run into some bugs at this point. Think about how the page and max page 
+index might have to change when you start searching for only subsets of all characters. */
+
+searchBar.addEventListener('submit', (event) => {
+event.preventDefault();
+searchQuery = searchBar.target.query.value.trim();
+page = 1;
+fetchCharacter();
+});
 
 fetchCharacter();
