@@ -1,12 +1,7 @@
-export function createButton({ type, onClick }) {
+export function createButton(text, className, onClick) {
   const button = document.createElement('button');
-  button.classList.add('button', `button--${type}`);
-  button.setAttribute('data-js', `button-${type}`);
-  button.textContent = type === 'prev' ? 'Previous' : 'Next';
-  
-  if (onClick) {
-    button.addEventListener('click', onClick);
-  }
-  
+  button.classList.add('button', className);
+  button.textContent = text;
+  button.addEventListener('click', onClick);
   return button;
 }

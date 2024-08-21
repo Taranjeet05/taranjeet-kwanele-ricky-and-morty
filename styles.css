@@ -83,7 +83,9 @@ main {
   flex-grow: 1;
   text-align: center;
 }
-
+.header--text:hover {
+  background: var(--color-highlight);
+}
 @media (max-width: 599px) {
   .card-container {
     flex-direction: column;

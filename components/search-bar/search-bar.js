@@ -1,25 +1,27 @@
-export function createSearchBar({ onSubmit }) {
+export function createSearchBar(onSubmit) {
   const form = document.createElement('form');
   form.classList.add('search-bar');
-  form.setAttribute('data-js', 'search-bar-container');
-  
+  form.addEventListener('submit', onSubmit);
+
   const input = document.createElement('input');
-  input.setAttribute('type', 'text');
-  input.setAttribute('name', 'query');
-  input.setAttribute('placeholder', 'Search characters...');
+  input.name = 'query';
   input.classList.add('search-bar__input');
-  
+  input.type = 'text';
+  input.placeholder = 'search characters';
+  input.ariaLabel = 'character name';
+
   const button = document.createElement('button');
-  button.setAttribute('type', 'submit');
   button.classList.add('search-bar__button');
-  button.textContent = 'Search';
-  
+  button.ariaLabel = 'search for character';
+
+  const img = document.createElement('img');
+  img.classList.add('search-bar__icon');
+  img.src = 'assets/magnifying-glass.png';
+  img.alt = '';
+
+  button.appendChild(img);
   form.appendChild(input);
   form.appendChild(button);
-  
-  if (onSubmit) {
-    form.addEventListener('submit', onSubmit);
-  }
-  
+
   return form;
 }
