@@ -16,14 +16,14 @@
   --color-highlight: #00bfff;
   --color-action: #ff4500;
   --font-family: system-ui;
-  --background-gif: url('assets/kids-background.gif');
+  
 }
 
 body {
   font-family: var(--font-family);
   color: var(--color-primary);
   padding: 20px; 
-  background: var(--background-gif) no-repeat center center fixed;
+  
   background-size: cover;
 }
 
