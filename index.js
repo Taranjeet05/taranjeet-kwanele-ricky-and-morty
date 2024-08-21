@@ -31,7 +31,7 @@ let searchQuery = "";
             image: character.image,
             name: character.name,
             status: character.status,
-            type: character.type || 'Em',
+            type: character.type || 'Not Defined',
             episodeCount: character.episode.length,
             });
             cardContainer.appendChild(card);
@@ -97,3 +97,24 @@ fetchCharacter();
 });
 
 fetchCharacter();
+
+
+/*Bonus: Refactoring your Code
+You've done it: your app is working as expected. 🚀✨
+
+However, we want to tidy up our code so that not everything is written 
+in a single javascript file.
+
+The next and prev button as well as the pagination and the search bar are currently 
+hard coded in the index.html. Remove the HTML code and generate them via JavaScript. 
+Use the respective JavaScript component files for that.
+The component functions should be called createButton, createPagination, and 
+createSearchBar and should return the created elements.
+HINT: It is challenging to get the event listener functions right for these components.
+ Use an extra input parameter onClick or onSubmit in your components.
+Use the create functions inside your index.js to generate the UI components. 
+You'll need to specify the event listener callback functions here either as anonymous 
+arrow functions or as named functions. Use them as the argument for onClick or onSubmit,
+ respectively.
+Append the created components at the right places in your HTML. All container
+ elements are already available in the index.js. */
