@@ -8,4 +8,12 @@
 .navigation__pagination {
   align-self: center;
   font-size: 1.2rem;
+  color: var(--color-primary);
+  animation: fadeIn 1s ease-out; /* Added fade-in animation */
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+

@@ -23,10 +23,9 @@ body {
   font-family: var(--font-family);
   color: var(--color-primary);
   padding: 20px; 
+  background: var(--background-gif) no-repeat center center fixed;
   background-size: cover;
-  background: url('assets/kids-background.gif');
 }
-
 
 main {
   display: flex;
@@ -38,13 +37,133 @@ main {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   max-width: 1200px;
   margin: 0 auto;
+  animation: fadeIn 1s ease-out; /* Added fade-in animation */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .title {
   padding: 10px 0;
   text-align: center;
   color: var(--color-accent);
+  font-size: 2rem; /* Increased font size for emphasis */
+  animation: bounceIn 1s; /* Added bounce-in animation */
 }
 
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
 
+.banner--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
 
+.header--image {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: border 0.3s;
+}
+
+.header--image:hover {
+  border: 5px solid var(--color-highlight);
+}
+
+.header--text {
+  flex-grow: 1;
+  text-align: center;
+}
+
+@media (max-width: 599px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header--image {
+    height: 200px;
+    width: 200px;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .card-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .header--image {
+    height: 250px;
+    width: 250px;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  .search-bar {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .card-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .header--image {
+    height: 300px;
+    width: 300px;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  .search-bar {
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .card-container {
+    justify-content: space-around;
+  }
+
+  .header--image {
+    height: 350px;
+    width: 350px;
+  }
+
+  main {
+    max-width: 1400px;
+  }
+
+  .search-bar {
+    max-width: 800px;
+  }
+}
