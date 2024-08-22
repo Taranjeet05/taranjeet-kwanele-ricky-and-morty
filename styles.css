@@ -11,30 +11,27 @@
 
 :root {
   --color-primary: rgb(51, 51, 51); 
-  --color-secondary: #f6f6f6;
+  --color-secondary: #2c2c2c; /* Updated for a darker secondary color */
   --color-accent: #ffcc00;
   --color-highlight: #00bfff;
   --color-action: #ff4500;
-  --font-family: system-ui;
-  
+  --font-family: system-ui, Arial, sans-serif;
 }
 
 body {
   font-family: var(--font-family);
-  color: var(--color-primary);
-  padding: 20px; 
-  
-  background-size: cover;
+  color: var(--color-accent); /* Adjusted text color to fit the color scheme */
+  padding: 20px;
+  background-color: var(--color-secondary); /* Dark background color */
 }
 
 main {
   display: flex;
   flex-direction: column;
-  gap: 20px; 
+  gap: 20px;
   padding: 20px;
   border-radius: 15px;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2); /* Light background with transparency */
   max-width: 1200px;
   margin: 0 auto;
   animation: fadeIn 1s ease-out; /* Added fade-in animation */
@@ -71,6 +68,7 @@ main {
   height: 300px;
   width: 300px;
   border-radius: 50%;
+  border: 5px solid var(--color-accent); /* Added border */
   object-fit: cover;
   transition: border 0.3s;
 }
@@ -82,10 +80,13 @@ main {
 .header--text {
   flex-grow: 1;
   text-align: center;
+  color: var(--color-accent);
 }
+
 .header--text:hover {
   background: var(--color-highlight);
 }
+
 @media (max-width: 599px) {
   .card-container {
     flex-direction: column;

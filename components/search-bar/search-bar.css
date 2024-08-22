@@ -7,7 +7,7 @@
 .search-bar {
   display: flex;
   padding: 5px;
-  background-color: var(--color-secondary);
+  background-color: var(--color-secondary); /* Dark background for search bar */
   align-items: center;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -18,7 +18,7 @@
 
 .search-bar:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  background: var(--color-highlight);
+  background: var(--color-highlight); /* Highlight color for hover */
 }
 
 .search-bar__input {
@@ -27,11 +27,12 @@
   border-radius: 20px;
   padding: 10px;
   font-size: 20px;
+  color: var(--color-primary); /* Adjusted text color */
 }
 
 .search-bar__button {
   border: none;
-  background: var(--color-accent);
+  background: var(--color-accent); /* Accent color for button */
   border-radius: 50%;
   cursor: pointer;
   margin-left: 5px;
@@ -47,6 +48,6 @@
 }
 
 .search-bar__button:hover {
-  background-color: var(--color-highlight);
+  background-color: var(--color-highlight); /* Highlight color for button hover */
   transform: scale(1.1);
 }
