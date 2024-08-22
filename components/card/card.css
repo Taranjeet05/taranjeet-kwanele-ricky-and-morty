@@ -6,7 +6,7 @@
 }
 
 .card {
-  background: var(--color-secondary); /* Adjusted to match the darker theme */
+  background: var(--color-secondary); /* Dark background */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -18,7 +18,7 @@
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  background-color: var(--color-highlight); /* Accent color for hover */
+  background-color: var(--color-highlight); /* Highlight color on hover */
 }
 
 .card-container:hover .card:not(:hover) {
@@ -49,6 +49,7 @@
   background: var(--color-secondary); /* Consistent background with card */
 }
 
+
 .card__title {
   color: var(--color-accent);
   font-size: 1.5rem;
@@ -72,7 +73,7 @@
 }
 
 .card__info-description {
-  color: var(--color-primary);
+  color: var(--color-white);
 }
 
 li {
@@ -83,3 +84,4 @@ img {
   width: 100%;
   max-width: 900px;
 }
+
