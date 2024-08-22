@@ -11,7 +11,7 @@
 
 :root {
   --color-primary: rgb(51, 51, 51); 
-  --color-secondary: #2c2c2c; /* Updated for a darker secondary color */
+  --color-secondary: #2c2c2c; 
   --color-accent: #ffcc00;
   --color-highlight: #00bfff;
   --color-action: #ff4500;
@@ -21,9 +21,9 @@
 
 body {
   font-family: var(--font-family);
-  color: var(--color-accent); /* Adjusted text color to fit the color scheme */
+  color: var(--color-accent); 
   padding: 20px;
-  background-color: var(--color-secondary); /* Dark background color */
+  background-color: var(--color-secondary); 
 }
 
 main {
@@ -32,10 +32,10 @@ main {
   gap: 20px;
   padding: 20px;
   border-radius: 15px;
-  background: rgba(255, 255, 255, 0.2); /* Light background with transparency */
+  background: rgba(255, 255, 255, 0.2); 
   max-width: 1200px;
   margin: 0 auto;
-  animation: fadeIn 1s ease-out; /* Added fade-in animation */
+  animation: fadeIn 1s ease-out; 
 }
 
 @keyframes fadeIn {
@@ -47,8 +47,8 @@ main {
   padding: 10px 0;
   text-align: center;
   color: var(--color-accent);
-  font-size: 2rem; /* Increased font size for emphasis */
-  animation: bounceIn 1s; /* Added bounce-in animation */
+  font-size: 2rem; 
+  animation: bounceIn 1s; 
 }
 
 @keyframes bounceIn {
@@ -69,9 +69,10 @@ main {
   height: 300px;
   width: 300px;
   border-radius: 50%;
-  border: 5px solid var(--color-accent); /* Added border */
+  border: 5px solid var(--color-accent); 
   object-fit: cover;
   transition: border 0.3s;
+  object-fit: cover;
 }
 
 .header--image:hover {

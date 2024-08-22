@@ -49,6 +49,9 @@
   background: var(--color-secondary); /* Consistent background with card */
 }
 
+.card:hover .card__content {
+  background-color: var(--color-highlight); /* Change content background color on hover */
+}
 
 .card__title {
   color: var(--color-accent);
