@@ -8,8 +8,8 @@
 .navigation__pagination {
   align-self: center;
   font-size: 1.2rem;
-  color: var(--color-accent); /* Accent color for pagination */
-  animation: fadeIn 1s ease-out; /* Added fade-in animation */
+  color: var(--color-accent); 
+  animation: fadeIn 1s ease-out; 
 }
 
 @keyframes fadeIn {

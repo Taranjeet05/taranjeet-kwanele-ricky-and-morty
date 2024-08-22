@@ -6,7 +6,7 @@
 }
 
 .card {
-  background: var(--color-secondary); /* Dark background */
+  background: var(--color-secondary); 
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
@@ -18,11 +18,11 @@
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  background-color: var(--color-highlight); /* Highlight color on hover */
+  background-color: var(--color-highlight); 
 }
 
 .card-container:hover .card:not(:hover) {
-  opacity: 0.5; /* Fades out other cards */
+  opacity: 0.5; 
 }
 
 .card__image-container {
@@ -46,11 +46,11 @@
 
 .card__content {
   padding: 15px;
-  background: var(--color-secondary); /* Consistent background with card */
+  background: var(--color-secondary); 
 }
 
 .card:hover .card__content {
-  background-color: var(--color-highlight); /* Change content background color on hover */
+  background-color: var(--color-highlight); 
 }
 
 .card__title {
@@ -67,12 +67,12 @@
 
 .card__info {
   font-size: 0.9rem;
-  color: var(--color-primary); /* Adjusted color for info text */
+  color: var(--color-primary); 
 }
 
 .card__info-title {
   font-weight: bold;
-  color: var(--color-action); /* Action color for titles */
+  color: var(--color-action); 
 }
 
 .card__info-description {
